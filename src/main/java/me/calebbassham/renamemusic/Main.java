@@ -31,6 +31,7 @@ public class Main {
             var artist = tag.getFirstField(FieldKey.ARTIST);
 
             file.renameTo(new File(file.getParent() + "/" + title + " - " + artist + getExtension(file)));
+            System.out.print('.');
         }
     }
 
