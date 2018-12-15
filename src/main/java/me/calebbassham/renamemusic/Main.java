@@ -14,7 +14,8 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) {
-        var dir = new File("/home/caleb/Music");
+
+        var dir = new File(System.getProperty("user.home") + "/Music");
         if (!dir.exists()) return;
 
         for (var file : dir.listFiles()) {
@@ -31,7 +32,7 @@ public class Main {
             var artist = tag.getFirstField(FieldKey.ARTIST);
 
             file.renameTo(new File(file.getParent() + "/" + title + " - " + artist + getExtension(file)));
-            System.out.print('.');
+            System.out.print(".");
         }
     }
 
